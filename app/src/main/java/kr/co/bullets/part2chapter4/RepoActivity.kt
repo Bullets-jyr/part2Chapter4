@@ -27,10 +27,10 @@ class RepoActivity : AppCompatActivity() {
 
     private var hasMore = true
 
-    private val retrofit = Retrofit.Builder()
-        .baseUrl("https://api.github.com/")
-        .addConverterFactory(GsonConverterFactory.create())
-        .build()
+//    private val retrofit = Retrofit.Builder()
+//        .baseUrl("https://api.github.com/")
+//        .addConverterFactory(GsonConverterFactory.create())
+//        .build()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,7 +70,8 @@ class RepoActivity : AppCompatActivity() {
     }
 
     private fun listRepo(userName: String, page: Int) {
-        val gitHubService = retrofit.create(GitHubService::class.java)
+//        val gitHubService = retrofit.create(GitHubService::class.java)
+        val gitHubService = APIClient.retrofit.create(GitHubService::class.java)
 
         gitHubService.listRepos(userName, page).enqueue(object : Callback<List<Repo>> {
             override fun onResponse(call: Call<List<Repo>>, response: Response<List<Repo>>) {
