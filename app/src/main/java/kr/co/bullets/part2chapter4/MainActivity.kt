@@ -36,7 +36,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
 //        gitHubService.listRepos("square").enqueue(object : Callback<List<Repo>> {
 //            override fun onResponse(call: Call<List<Repo>>, response: Response<List<Repo>>) {
 //                Log.e("MainActivity", "List Repo : ${response.body().toString()}")

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/repoNameTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Aardvark" />
+
+    <TextView
+        android:id="@+id/descriptionTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/repoNameTextView"
+        tools:text="Aardvark is a library that makes it dead simple to create actionable bug reports." />
+
+    <ImageView
+        android:id="@+id/stargazersCountImageView"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/baseline_star_outline_24"
+        app:layout_constraintBottom_toBottomOf="@id/stargazersCountTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/stargazersCountTextView" />
+
+    <TextView
+        android:id="@+id/stargazersCountTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toEndOf="@id/stargazersCountImageView"
+        app:layout_constraintTop_toBottomOf="@id/descriptionTextView"
+        tools:text="257" />
+
+    <ImageView
+        android:id="@+id/forksCountImageView"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/baseline_fork_right_24"
+        app:layout_constraintBottom_toBottomOf="@id/forksCountTextView"
+        app:layout_constraintStart_toEndOf="@id/stargazersCountTextView"
+        app:layout_constraintTop_toTopOf="@id/forksCountTextView" />
+
+    <TextView
+        android:id="@+id/forksCountTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toEndOf="@id/forksCountImageView"
+        app:layout_constraintTop_toBottomOf="@id/descriptionTextView"
+        tools:text="47" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
