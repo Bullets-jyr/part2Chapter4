@@ -10,7 +10,7 @@ import kr.co.bullets.part2chapter4.databinding.ItemUserBinding
 import kr.co.bullets.part2chapter4.model.Repo
 import kr.co.bullets.part2chapter4.model.User
 
-class RepoAdapter : ListAdapter<Repo, RepoAdapter.RepoViewHolder>(diffUtil) {
+class RepoAdapter(private val onClick: (Repo) -> Unit) : ListAdapter<Repo, RepoAdapter.RepoViewHolder>(diffUtil) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RepoViewHolder {
         return RepoViewHolder(ItemRepoBinding.inflate(LayoutInflater.from(parent.context), parent, false))
@@ -27,6 +27,9 @@ class RepoAdapter : ListAdapter<Repo, RepoAdapter.RepoViewHolder>(diffUtil) {
             binding.descriptionTextView.text = repo.description
             binding.stargazersCountTextView.text = repo.stargazersCount.toString()
             binding.forksCountTextView.text = "${repo.forksCount}"
+            binding.root.setOnClickListener {
+                onClick(repo)
+            }
         }
     }
 
